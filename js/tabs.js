@@ -4,7 +4,15 @@ const tabImages = document.querySelectorAll('.design-images');
 const featureImg = document.querySelectorAll('.design-block__img');
 const title = document.querySelector('title');
 
-console.log(document);
+const changeContent = (array, value) => {
+	array.forEach((elem) => {
+		if (elem.dataset.tabsField === value) {
+			elem.classList.remove('hidden');
+		} else {
+			elem.classList.add('hidden');
+		}
+	});
+}
 
 tabButtons.forEach((tabButton, index) => {
 	tabButton.addEventListener('click', (event) => {
@@ -26,12 +34,3 @@ tabButtons.forEach((tabButton, index) => {
 	});
 });
 
-const changeContent = (array, value) => {
-	array.forEach((elem) => {
-		if (elem.dataset.tabsField === value) {
-			elem.classList.remove('hidden');
-		} else {
-			elem.classList.add('hidden');
-		}
-	});
-}
